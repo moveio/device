@@ -4,12 +4,12 @@ from flask import Flask
 app = Flask(__name__)
 sense = SenseHat()
 
-@app.route("/left")
+@app.route("/left", methods=['GET', 'POST'])
 def turn_on():
     sense.show_message("Left")
     return "Turning on!"
 
-@app.route("/right")
+@app.route("/right", methods=['GET', 'POST'])
 def turn_off():
     sense.show_message("Right")
     return "Turning off!"
